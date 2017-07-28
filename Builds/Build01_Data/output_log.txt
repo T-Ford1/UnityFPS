@@ -23,13 +23,13 @@ Platform assembly: C:\Dev\UnityFPS\Builds\Build01_Data\Managed\UnityEngine.Analy
 Loading C:\Dev\UnityFPS\Builds\Build01_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Dev\UnityFPS\Builds\Build01_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Dev\UnityFPS\Builds\Build01_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.015 seconds
+- Completed reload, in  0.016 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.828309 ms
+UnloadTime: 0.769181 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2248 -> priority: 1 
-  Thread -> id: 2278 -> priority: 1 
-  Thread -> id: 216c -> priority: 1 
-  Thread -> id: 82c -> priority: 1 
+  Thread -> id: 524 -> priority: 1 
+  Thread -> id: 23f8 -> priority: 1 
+  Thread -> id: 1fb4 -> priority: 1 
+  Thread -> id: 1e14 -> priority: 1 
