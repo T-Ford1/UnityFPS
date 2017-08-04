@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/tutorialLevel.unity
-=======
-<<<<<<< HEAD
-- path: Assets/developing.unity
-=======
 - path: Assets/basicGUI.unity
->>>>>>> 21cdc50e3564b651a115ee161fc81c83c5a32748
->>>>>>> feace079b02bb71a3694027d36c618402ab63ff7
   isLoaded: 1
   isActive: 1
