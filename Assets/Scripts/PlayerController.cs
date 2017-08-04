@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(ConfigurableJoint))]
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
 
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     private float playerSpeed = 5f;
     [SerializeField]
     private float playerLook = 5f;
+    [SerializeField]
+    private float playerThrust = 100f;
 
     private PlayerMotor motor;
 
@@ -31,6 +34,17 @@ public class PlayerController : MonoBehaviour {
 
         motor.MovePlayer(_velocity);
 
+
+        bool _jump = Input.GetButton("Jump");
+
+        Vector3 _playerThrust = Vector3.zero;
+
+        if (_jump)
+        {
+            _playerThrust = Vector3.up * playerThrust;
+        }
+        motor.ThrustPlayer(_playerThrust);
+
         //calculate rotation as a 3D vector
 
         float _yRot = Input.GetAxisRaw("Mouse X");//move mouse on x, rotate around the y axis
@@ -43,9 +57,10 @@ public class PlayerController : MonoBehaviour {
 
         float _xRot = -Input.GetAxisRaw("Mouse Y");
 
-        Vector3 _cameraRotation = new Vector3(_xRot, 0f, 0f) * playerLook;
+        float _deltaRotation = _xRot * playerLook;
 
         //Apply rotation
-        motor.RotateCamera(_cameraRotation);
+        motor.RotateCamera(_deltaRotation);
+
     }
 }

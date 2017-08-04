@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/developing.unity
+=======
 - path: Assets/basicGUI.unity
+>>>>>>> 21cdc50e3564b651a115ee161fc81c83c5a32748
   isLoaded: 1
   isActive: 1
