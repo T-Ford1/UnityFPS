@@ -1,0 +1,4 @@
+﻿using UnityEngine;  public class MouseLock : MonoBehaviour {      private static bool wasLocked = false;      public static void LockCursor()     {         if (wasLocked) return;          wasLocked = true;         Cursor.lockState = CursorLockMode.Locked;         Cursor.visible = false;     }      public static void UnlockCursor()     {         wasLocked = false;         Cursor.lockState = CursorLockMode.None;         Cursor.visible = true;     } 	 	void Update () { 		if(Input.GetKeyDown("escape"))         {             UnlockCursor();         } else if(Input.GetMouseButtonUp(0))
+        {
+            LockCursor();
+        } 	} } 
