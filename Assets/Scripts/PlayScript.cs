@@ -7,37 +7,31 @@ using System.Collections;
 public class PlayScript : MonoBehaviour {
 
     [SerializeField]
-    private string loadingScreenName;
+    private int loadingScreenIndex;
     [SerializeField]
-    private string gameSceneName;
+    private int gameSceneIndex;
 
     private Button b;
 
 	// Use this for initialization
 	void Start () {
         b = GetComponent<Button>();
-        b.onClick.AddListener(() => OnButtonClick());
+        b.onClick.AddListener(() => OnPlayGame());
 	}
 
-    void OnButtonClick()
+    void OnPlayGame()
     {
-        Scene _load = SceneManager.CreateScene(loadingScreenName);
-        SceneManager.LoadScene(loadingScreenName);
-        SceneManager.SetActiveScene(_load);
+        SceneManager.LoadScene(loadingScreenIndex);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(loadingScreenIndex));
 
-        Scene _game = SceneManager.CreateScene(gameSceneName);
-        SceneManager.LoadScene(gameSceneName);
-        SceneManager.SetActiveScene(_game);
-
-        //AsynchronousLoad();
+        StartCoroutine(AsynchronousLoad(gameSceneIndex));
     }
 
-    IEnumerator AsynchronousLoad(string scene)
+    IEnumerator AsynchronousLoad(int sceneIndex)
     {
-        yield return null;
-
-        AsyncOperation ao = SceneManager.LoadSceneAsync(scene);
+        AsyncOperation ao = SceneManager.LoadSceneAsync(sceneIndex);
         ao.allowSceneActivation = false;
+        
 
         while (!ao.isDone)
         {

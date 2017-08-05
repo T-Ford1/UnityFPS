@@ -17,6 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tutorialLevel.unity
     guid: bdfa21b18b058044aa0afff39c49747c
-  - enabled: 1
-    path: Assets/Scenes/veryLongLoad.unity
+  - enabled: 0
+    path: 
     guid: 635ffde601288cb4aa310bcaeffc49c5
